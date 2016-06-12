@@ -32,5 +32,5 @@ class perl (
   }
 
   $modules = hiera_array('perl::modules',{})
-  perl::modules { $modules: }
+  ::perl::modules { $modules: }
 }

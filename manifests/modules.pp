@@ -5,7 +5,7 @@ define perl::modules (
 
   $required = $title
 
-  package { $required":
+  package { $required:
     ensure  => $ensure
   }
 
