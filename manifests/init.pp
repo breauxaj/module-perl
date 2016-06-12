@@ -31,6 +31,6 @@ class perl (
     ensure  => $ensure,
   }
 
-  $perl_modules = hiera('perl',[])
-  create_resources('perl::modules',$perl_modules)
+  $modules = hiera_array('perl::modules',{})
+  perl::modules { $modules: }
 }
