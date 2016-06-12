@@ -1,10 +1,9 @@
 define perl::modules (
-  $name,
-  $ensure = $::perl::params::perl_package_ensure
+  $value
 ) {
   include ::perl
 
   package { $name:
-    ensure  => $ensure,
+    ensure  => $::perl::params::perl_package_ensure,
   }
 }
