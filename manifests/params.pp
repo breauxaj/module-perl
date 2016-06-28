@@ -8,12 +8,12 @@
 class perl::params {
   $perl_package_ensure = 'latest'
 
-  case $::operatingsystem {
-    'Amazon', 'CentOS', 'OracleLinux', 'RedHat': {
-      $perl_package = 'perl'
-    }
+  case $::osfamily {
     'Debian': {
       $perl_package = 'perl-base'
+    }
+    'RedHat': {
+      $perl_package = 'perl'
     }
     default: {
       fail("The ${module_name} module is not supported on an ${::osfamily} based system.")
