@@ -32,5 +32,6 @@ class perl (
   }
 
   $modules = hiera_hash('perl::modules',{})
-  perl::modules { $modules: }
+  create_resources('perl::modules',$modules)
+
 }

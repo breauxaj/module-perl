@@ -6,7 +6,8 @@ define perl::modules (
   $required = $title
 
   package { $required:
-    ensure  => $ensure
+    ensure  => $ensure,
+    require => Package[$::perl::params::perl_package]
   }
 
 }
