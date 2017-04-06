@@ -8,8 +8,6 @@ node default {
     'RedHat': {
       perl::modules { 'perl-libwww-perl': }  
     }
-    default: {
-
-    }
+    default: { }
   }
 }
