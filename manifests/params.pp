@@ -10,13 +10,30 @@ class perl::params {
 
   case $::osfamily {
     'Debian': {
-      $perl_package = 'perl-base'
+      case $::operatingsystem {
+        default: {
+          case $::operatingsystemmajrelease {
+            default: {
+              $perl_package = 'perl-base'
+            }
+          }
+        }
+      }
     }
     'RedHat': {
-      $perl_package = 'perl'
+      case $::operatingsystem {
+        default: {
+          case $::operatingsystemmajrelease {
+            default: {
+              $perl_package = 'perl'
+            }
+          }
+        }
+      }
     }
     default: {
       fail("The ${module_name} module is not supported on an ${::osfamily} based system.")
     }
   }
+
 }
